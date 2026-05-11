@@ -31,7 +31,7 @@ const translations = {
 
   en:{
 
-    title:"Todo List",
+    title:"To do List",
 
     add:"ADD",
 
