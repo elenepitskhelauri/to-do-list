@@ -666,3 +666,40 @@ select,
   }
 
 }
+@media(max-width:768px){
+
+  .lang-switch{
+    width:100%;
+  }
+
+  .lang-btn{
+    flex:1;
+  }
+
+  .task-box{
+    grid-template-columns:1fr;
+  }
+
+  .task-box input,
+  .task-box button,
+  .task-box select{
+    width:100%;
+  }
+
+  .task{
+    padding:18px;
+  }
+
+  .right{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+  }
+
+  .done-btn,
+  .delete-btn{
+    width:100%;
+  }
+
+}

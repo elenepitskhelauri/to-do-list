@@ -103,8 +103,17 @@ function updateLanguage(){
 
   /* TITLE */
 
+if(currentLang === "ge"){
+
   title.textContent =
-    `${userName}'s ${lang.title}`;
+  `${userName}-ს ${lang.title}`;
+
+}else{
+
+  title.textContent =
+  `${userName}'s ${lang.title}`;
+
+}
 
   /* INPUTS */
 
@@ -281,8 +290,12 @@ function confettiEffect(){
 
 /* ========= NOTIFICATIONS ========= */
 
-if(Notification.permission !== "granted"){
-  Notification.requestPermission();
+if("Notification" in window){
+
+  if(Notification.permission !== "granted"){
+    Notification.requestPermission();
+  }
+
 }
 
 /* ========= RENDER ========= */
