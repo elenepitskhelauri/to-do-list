@@ -703,3 +703,133 @@ select,
   }
 
 }
+/* =========================
+   IOS + IPHONE FIXES
+========================= */
+
+/* FIX IOS HEIGHT */
+
+html{
+  height:100%;
+}
+
+body{
+  min-height:100svh;
+  min-height:100dvh;
+}
+
+/* FIX GLASSMORPHISM ON SAFARI */
+
+.container{
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+/* FIX BUTTON CLICK ISSUES */
+
+button{
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* FIX INPUT ZOOM ON IPHONE */
+
+input,
+select,
+textarea,
+button{
+  font-size:16px;
+}
+
+/* FIX LANGUAGE BUTTONS */
+
+.lang-switch{
+  position:relative;
+  z-index:20;
+}
+
+.lang-btn{
+  pointer-events:auto;
+}
+
+/* FIX TASK BUTTONS */
+
+.right button{
+  min-height:48px;
+}
+
+/* FIX OVERFLOW */
+
+.container,
+.task,
+.task-box{
+  overflow:hidden;
+}
+
+/* FIX TASK TEXT BREAKING */
+
+.task-text{
+  overflow-wrap:break-word;
+  word-break:break-word;
+}
+
+/* SMALL IPHONES */
+
+@media(max-width:480px){
+
+  body{
+    padding:10px;
+  }
+
+  .container{
+    padding:16px;
+    border-radius:20px;
+  }
+
+  h1{
+    font-size:26px;
+  }
+
+  .task{
+    padding:16px;
+  }
+
+  .task-box{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .right{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+  }
+
+  .done-btn,
+  .delete-btn{
+    width:100%;
+  }
+
+}
+
+/* TABLETS */
+
+@media(min-width:768px) and (max-width:1024px){
+
+  .container{
+    width:100%;
+    max-width:90%;
+  }
+
+  .task-box{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+}
+.bg-glow{
+  pointer-events:none;
+}
