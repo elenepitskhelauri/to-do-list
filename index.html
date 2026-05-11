@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Todo List</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- BACKGROUND GLOWS -->
+
+  <div class="bg-glow glow1"></div>
+  <div class="bg-glow glow2"></div>
+
+  <!-- MAIN -->
+
+  <main class="container">
+
+    <!-- HEADER -->
+
+    <div class="top-row">
+
+      <div>
+        <h1 id="title"></h1>
+        <p class="today" id="todayDate"></p>
+      </div>
+
+      <!-- LANGUAGE SWITCH -->
+
+      <div class="lang-switch">
+        <button class="lang-btn active" id="enBtn">
+          EN
+        </button>
+
+        <button class="lang-btn" id="geoBtn">
+          GE
+        </button>
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+      <div class="stat-card">
+        <span id="totalTasks">0</span>
+        <p>Total</p>
+      </div>
+
+      <div class="stat-card">
+        <span id="completedTasks">0</span>
+        <p>Completed</p>
+      </div>
+
+      <div class="stat-card">
+        <span id="remainingTasks">0</span>
+        <p>Remaining</p>
+      </div>
+
+    </div>
+
+    <!-- PROGRESS -->
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search tasks..."
+      >
+    </div>
+
+    <!-- TASK INPUT -->
+
+    <div class="task-box">
+
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="What do you need to do?"
+      >
+
+      <input
+        type="time"
+        id="taskTime"
+      >
+
+      <input
+        type="date"
+        id="taskDate"
+      >
+
+      <select id="priority">
+
+        <option value="low">
+          🟢 Low
+        </option>
+
+        <option value="medium">
+          🟡 Medium
+        </option>
+
+        <option value="high">
+          🔴 High
+        </option>
+
+      </select>
+
+      <select id="category">
+
+        <option value="Work">
+          💼 Work
+        </option>
+
+        <option value="Study">
+          📚 Study
+        </option>
+
+        <option value="Gym">
+          🏋️ Gym
+        </option>
+
+        <option value="Personal">
+          ✨ Personal
+        </option>
+
+      </select>
+
+      <button id="addBtn">
+        ADD
+      </button>
+
+
+    </div>
+
+    <!-- ACTIVE TASKS -->
+
+    <h2 class="section-title">
+      ACTIVE TASKS
+    </h2>
+
+    <div class="task-list" id="taskList"></div>
+
+    <!-- COMPLETED -->
+
+    <h2 class="section-title completed-title">
+      COMPLETED TASKS
+    </h2>
+
+    <div class="task-list" id="completedList"></div>
+
+    <!-- CALENDAR FILTER -->
+
+    <div class="calendar-box">
+      <input type="date" id="calendarFilter">
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
