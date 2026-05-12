@@ -337,14 +337,32 @@ function renderTasks(){
       document.createElement("div");
 
     info.classList.add("task-info");
+    const today = new Date();
+const deadline = new Date(task.date);
 
-    info.innerHTML = `
-      <span>📅 ${task.date}</span>
-      <span>⏰ ${task.time}</span>
-      <span class="category-pill">
-        ${task.category}
-      </span>
-    `;
+const diffTime = deadline - today;
+
+const daysLeft = Math.ceil(
+  diffTime / (1000 * 60 * 60 * 24)
+);
+info.innerHTML = `
+  <span>📅 ${task.date}</span>
+
+  <span>⏰ ${task.time}</span>
+
+  <span>
+    🕒 Added:
+    ${new Date(task.createdAt).toLocaleString()}
+  </span>
+
+  <span>
+    ⌛ ${daysLeft} days left
+  </span>
+
+  <span class="category-pill">
+    ${task.category}
+  </span>
+`;
 
     left.appendChild(text);
     left.appendChild(info);
@@ -486,11 +504,14 @@ function addTask(){
     category:
       category.value,
 
-    completed:false
+    completed:false,
+
+    createdAt: new Date()
 
   };
 
   tasks.push(task);
+  alert("Task added successfully!");
 
   saveTasks();
 
